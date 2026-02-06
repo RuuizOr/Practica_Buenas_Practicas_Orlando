@@ -3,73 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Usuarios - Sistema Beta v1.2.3</title>
+    <!-- BUENA PRACTICA (1), BORRE lA VERSION DEL SISTEMA DEL TITULO (HARDCODE)-->
+    <title>Registro de Usuarios</title>
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- codigo viejo del diseño anterior -->
-    <!-- <style>
-        body {
-            background-color: #f0f0f0;
-        }
-        .old-header {
-            background-color: #ff6b6b;
-            color: white;
-        }
-        .deprecated-button {
-            background-color: #4ecdc4;
-        }
-    </style> -->
+    <!-- BUENA PRACTICA (2), BORRE CODIGO COMENTADO DEL DISEÑO ANTERIOR -->
+
 </head>
 <body class="bg-light">
     <div class="container py-5">
         <div class="card shadow-lg mb-4">
             <div class="card-header bg-primary text-white">
                 <h2 class="mb-0">📝 Registro de Usuarios</h2>
-                <small>Sistema de Base de Datos v1.2.3 - Puerto 8080 - MySQL 5.7</small>
+                <!-- BUENA PRACTICA (3), BORRE INFORMACIÓN TÉCNICA (HARDCODE) -->
             </div>
             <div class="card-body">
                 <form id="registroForm">
                     <div class="row">
+                        <!-- BUENA PRACTICA (4), COLOQUE VALIDACIONES DE ENTRADA -->
                         <div class="col-md-6 mb-3">
                             <label for="nombre" class="form-label">Nombre(s)</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required
+                                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,50}" maxlength="50">
                         </div>
+                        <!-- BUENA PRACTICA (4), COLOQUE VALIDACIONES DE ENTRADA -->
                         <div class="col-md-6 mb-3">
                             <label for="apellido1" class="form-label">Primer Apellido</label>
-                            <input type="text" class="form-control" id="apellido1" placeholder="Primer apellido">
+                            <input type="text" class="form-control" id="apellido1" placeholder="Primer apellido" required
+                                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,50}" maxlength="50">
                         </div>
                     </div>
-
                     <div class="row">
+                        <!-- BUENA PRACTICA (4), COLOQUE VALIDACIONES DE ENTRADA -->
                         <div class="col-md-6 mb-3">
                             <label for="apellido2" class="form-label">Segundo Apellido</label>
-                            <input type="text" class="form-control" id="apellido2" placeholder="Segundo apellido">
+                            <input type="text" class="form-control" id="apellido2" placeholder="Segundo apellido" required
+                               pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,50}" maxlength="50">
+                        <!-- BUENA PRACTICA (4), COLOQUE VALIDACIONES DE ENTRADA -->
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="text" class="form-control" id="telefono" placeholder="10 dígitos">
+                            <input type="text" class="form-control" id="telefono" placeholder="10 dígitos" required
+                               pattern="[0-9]{10}" maxlength="10">
                         </div>
                     </div>
 
                     <div class="row">
+                        <!-- BUENA PRACTICA (4), COLOQUE VALIDACIONES DE ENTRADA -->
                         <div class="col-md-6 mb-3">
                             <label for="curp" class="form-label">CURP</label>
-                            <input type="text" class="form-control" id="curp" placeholder="18 caracteres">
+                            <input type="text" class="form-control" id="curp" placeholder="18 caracteres" required
+                                pattern="^[A-Z]{4}[0-9]{6}[HM][A-Z]{5}[A-Z0-9][0-9]$" maxlength="18" style="text-transform: uppercase;">
                         </div>
+                        <!-- BUENA PRACTICA (4), COLOQUE VALIDACIONES DE ENTRADA -->
                         <div class="col-md-6 mb-3">
                             <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="text" class="form-control" id="email" placeholder="ejemplo@correo.com">
+                            <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com" required maxlength="100">
                         </div>
                     </div>
 
-                    <!--
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password">
-                        </div>
-                    </div>
-                    -->
+                    <!-- BUENA PRACTICA (5), BORRE CODIGO COMENTADO DEL CAMPO DE CONTRASEÑA -->
+
 
                     <div class="d-grid gap-2">
                         <button type="submit" class="btn btn-primary btn-lg">
@@ -113,3 +107,13 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+<!--
+LAS BUENAS PRACTICAS QUE ENCONTRE SON:
+Validación de entrada
+Código comentado 
+Valores quemados 
+-->
+
+
